@@ -1,0 +1,141 @@
+Naming Conventions
+==================
+
+To keep our project clean, readable, and consistent, follow these naming rules for all folders and files:
+
+Folder & Package Names
+----------------------
+- Use lowercase letters only
+- Use short, descriptive names based on the feature or functionality
+- Avoid capital letters, spaces, or underscores
+
+Examples:
+mainloop
+car
+track
+input
+audio
+
+Java File & Class Names
+-----------------------
+- Each Java class should go in its own file
+- File name must exactly match the class name
+- Class names use UpperCamelCase
+
+Examples:
+MainLoop.java
+Car.java
+TrackBuilder.java
+InputHandler.java
+
+Folder Structure Rules
+----------------------
+- Group related classes into folders based on their feature or purpose
+- Do not create a folder just to match the name of a single class
+- Place sub-feature or helper classes in the same folder when appropriate
+
+Example:
+car/
+  Car.java
+  CarController.java
+
+mainloop/
+  MainLoop.java
+  FrameTimer.java
+
+Avoid:
+------
+- Folders with uppercase letters: MainLoop/, CarControl/
+- Class names or file names starting with lowercase: car.java, trackbuilder.java
+- Naming files the same as folders with lowercase letters: mainloop/mainloop.java
+
+These conventions follow Java standards and keep the project organized, especially when collaborating through IntelliJ and GitHub.
+
+
+
+Git Workflow for Collaboration
+==============================
+
+This document describes the recommended Git workflow for working together on our project using branches, commits, pull requests, and merging into the main branch.
+
+1. Starting Point: main Branch
+------------------------------
+- The main branch should always be stable and deployable.
+- Do NOT commit code directly to main.
+- Always start new work from the latest main.
+
+2. Creating a Branch
+--------------------
+- Before starting a new feature or bugfix, create a new branch based on main.
+- Use descriptive branch names that reflect the task or feature.
+
+Example commands:
+git checkout main
+git pull
+git checkout -b feature/your-feature-name
+
+3. Committing Changes
+---------------------
+- Commit your changes frequently with clear, descriptive messages.
+- Each commit should represent a logical unit of work.
+
+Example commit messages:
+Add car acceleration logic
+Fix input lag on keyboard handling
+Refactor game loop for better timing
+
+4. Pushing Your Branch
+----------------------
+- Push your branch to GitHub regularly to back up your work and share progress.
+
+Example:
+git push -u origin feature/your-feature-name
+
+5. Creating a Pull Request (PR)
+-------------------------------
+- When your feature or fix is ready and tested locally, open a pull request from your branch into main on GitHub.
+- Write a clear description of what the PR changes or adds.
+- Request your partner to review your changes.
+
+6. Code Review and Approval
+---------------------------
+- Review each other’s pull requests thoroughly.
+- Discuss any issues or suggestions via PR comments.
+- Only merge the PR when both agree the code is ready and stable.
+
+7. Merging into main
+-------------------
+- After approval, merge the PR into main using GitHub’s merge functionality.
+- Delete the feature branch after merging to keep the repository clean.
+
+8. Updating Your Local main
+---------------------------
+- Regularly update your local main branch with the latest changes.
+
+Example:
+git checkout main
+git pull
+
+9. Starting New Work
+--------------------
+- Repeat the process: create a new branch from updated main before starting any new feature or fix.
+
+Summary: Dos and Don'ts
+-----------------------
+Do:
+- Always branch from main, never commit directly to main.
+- Commit often with clear messages.
+- Push your branches regularly.
+- Open pull requests for all changes.
+- Review each other’s code before merging.
+- Pull the latest main branch before starting new work.
+- Delete branches after merging.
+
+Don't:
+- Don’t commit broken or unfinished code to main.
+- Don’t merge your own PR without a partner’s review (except for minor fixes).
+- Don’t work directly on the main branch.
+- Don’t leave old branches lying around after merge.
+- Don’t ignore merge conflicts — resolve them carefully.
+
+Following this workflow keeps our code clean, reduces conflicts, and makes collaboration smooth and efficient.

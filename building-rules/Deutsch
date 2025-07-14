@@ -1,0 +1,142 @@
+Namenskonventionen
+==================
+
+Damit unser Projekt sauber, lesbar und konsistent bleibt, gelten folgende Namensregeln für alle Ordner und Dateien:
+
+Ordner- und Paketnamen
+----------------------
+- Nur Kleinbuchstaben verwenden
+- Kurze, beschreibende Namen basierend auf der Funktion oder dem Feature
+- Keine Großbuchstaben, Leerzeichen oder Unterstriche verwenden
+- "-" um wörter zu verbinden
+
+Beispiele:
+mainloop
+track
+input
+audio
+
+Java-Datei- und Klassennamen
+----------------------------
+- Jede Java-Klasse gehört in eine eigene Datei
+- Der Dateiname muss exakt dem Klassennamen entsprechen
+- Klassennamen werden im UpperCamelCase geschrieben
+
+Beispiele:
+MainLoop.java
+Car.java
+TrackBuilder.java
+InputHandler.java
+
+Ordnerstruktur-Regeln
+---------------------
+- Verwandte Klassen in Ordnern nach Funktion/Feature gruppieren
+- Keine Ordner nur für einzelne Klassen anlegen
+- Hilfsklassen oder Subfunktionen im gleichen Ordner speichern, wenn sie logisch dazugehören
+
+Beispiel:
+car/
+  Car.java
+  CarController.java
+
+mainloop/
+  MainLoop.java
+  FrameTimer.java
+
+Vermeide:
+---------
+- Ordner mit Großbuchstaben: MainLoop/, CarControl/
+- Klassennamen oder Dateinamen mit Kleinbuchstaben: car.java, trackbuilder.java
+- Dateien mit gleichem Namen wie der Ordner in Kleinbuchstaben: mainloop/mainloop.java
+
+Diese Konventionen folgen dem Java-Standard und sorgen für eine gut organisierte Projektstruktur – besonders bei der Arbeit mit IntelliJ und GitHub.
+
+
+
+
+Git-Workflow für Zusammenarbeit
+===============================
+
+Dieses Dokument beschreibt den empfohlenen Git-Workflow für unsere gemeinsame Arbeit: mit Branches, Commits, Pull Requests und dem finalen Merge in den main-Branch.
+
+1. Ausgangspunkt: main-Branch
+-----------------------------
+- Der Branch main ist immer stabil und lauffähig.
+- Niemals direkt in main programmieren.
+- Jede neue Arbeit beginnt vom aktuellsten Stand von main.
+
+2. Erstellen eines Branches
+---------------------------
+- Vor jedem neuen Feature oder Bugfix einen neuen Branch aus main erstellen.
+- Aussagekräftige Branch-Namen verwenden, die die Aufgabe beschreiben.
+
+Beispiel-Befehle:
+git checkout main
+git pull
+git checkout -b feature/feature-name
+
+3. Änderungen committen
+-----------------------
+- Häufig committen mit klaren, beschreibenden Nachrichten.
+- Jeder Commit sollte eine logische Einheit darstellen.
+
+Beispiele für Commit-Nachrichten:
+Auto-Beschleunigung hinzugefügt
+Eingabeverzögerung behoben
+Game Loop für bessere Zeitsynchronisation umstrukturiert
+
+4. Branch pushen
+----------------
+- Den Branch regelmäßig zu GitHub pushen, um Fortschritt zu sichern und zu teilen.
+
+Beispiel:
+git push -u origin feature/feature-name
+
+5. Pull Request (PR) erstellen
+------------------------------
+- Wenn ein Feature/Fix fertig ist und lokal getestet wurde: PR von deinem Branch zu main auf GitHub erstellen.
+- Kurze, klare Beschreibung einfügen, was geändert wurde.
+- Den Partner zur Code-Review einladen.
+
+6. Code-Review und Freigabe
+---------------------------
+- Den Pull Request des anderen gründlich überprüfen.
+- Feedback oder Fragen in den Kommentaren klären.
+- PR erst mergen, wenn beide zustimmen, dass der Code stabil ist.
+
+7. Merge in main
+----------------
+- Nach Freigabe PR über GitHub in main mergen.
+- Branch danach löschen, um das Repository sauber zu halten.
+
+8. Lokalen main aktualisieren
+-----------------------------
+- Regelmäßig den eigenen lokalen main mit dem neuesten Stand von GitHub synchronisieren.
+
+Beispiel:
+git checkout main
+git pull
+
+9. Neue Arbeit beginnen
+-----------------------
+- Für jedes neue Feature/Fix wieder neuen Branch vom aktuellen main erstellen.
+
+Zusammenfassung: Do's and Don'ts
+-------------------------------
+Do:
+- Immer von main branchen, nie direkt in main arbeiten.
+- Häufig committen mit klaren Beschreibungen.
+- Branches regelmäßig pushen.
+- Für jede Änderung einen Pull Request erstellen.
+- Den Code gegenseitig reviewen.
+- Vor neuer Arbeit main updaten.
+- Branches nach dem Mergen löschen.
+
+Don't:
+- Kein unfertiger oder fehlerhafter Code in main.
+- PRs nicht selbst mergen (außer bei Mini-Fixes) – vorher reviewen.
+- Nicht direkt im main-Branch entwickeln.
+- Alte Branches nicht vergessen zu löschen.
+- Merge-Konflikte nicht ignorieren – sorgfältig auflösen.
+
+Wenn wir diesen Workflow einhalten, bleibt unser Code sauber, Konflikte gering, und die Zusammenarbeit funktioniert reibungslos.

@@ -1,0 +1,5 @@
+# Set all text files to normalize line endings to LF in the repo
+* text=auto
+
+# Or be explicit for Java files
+*.java text eol=lf
